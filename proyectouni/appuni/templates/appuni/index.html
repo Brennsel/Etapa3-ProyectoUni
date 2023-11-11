@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends "appuni/layout.html" %}
+{% load static %}
+
+    {% block content %}
+
+<!--<!DOCTYPE html>
+ <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +16,7 @@
     <div id="contenedor">
         <img src="imagenes/eu_banner.png" alt="Banner Superior">
         <h1>Gestión de la Universidad</h1>
-        <main id="formulario">
+       <main id="formulario">
             <h4>Ingresar Alumno</h4>
             <form action="cgi-bin/handledb.py" method="post">
                 <div class="campo">
@@ -48,10 +53,38 @@
                     <input type="submit" class="btn" name="insertar" value="Guardar">
                     <button type="reset" claas="btn">Cancelar</button>
             </form>
-        </main>
+        </main> -->
+
         <div id="registros">
             <h1>Control de Registro</h1>
-        </div>
+            
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre y Apellido</th>
+                        <th>Edad</th>
+                        <th>Materia</th>
+                    </tr>
+                    </thead>
+                
+                    <tbody>
+                    {% for alumno in alumnos %}
+                        <tr>
+                        <td><a href="{% url 'alumno' alumno.id %}">{{ alumno.id }}</a></td>
+                        <td>{{ alumno.nombre }}</td>
+                        <td>{{ alumno.edad }}</td>
+                        <td>{{ alumno.materia }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                
+            <a href="{% url 'nuevo_alumno' %}" class="estilo-boton">Nuevo Alumno</a>
+                
+     {% endblock %}
+
+<!--         </div>
         <script>
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "cgi-bin/handledb.py", true);
@@ -65,4 +98,4 @@
         </script>
     </div>
 </body>
-</html>
+</html>  -->
