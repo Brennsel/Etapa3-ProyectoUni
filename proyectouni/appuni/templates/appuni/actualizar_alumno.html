@@ -1,0 +1,45 @@
+{% extends "appuni/layout.html" %}
+{% load static %}
+
+{% block content %}
+
+    <main id="formulario">
+
+        <h4>Actualizar Alumno</h4>
+
+        <form action="{% url 'actualizar_alumno' alumno.id %}" method="post">
+            {% csrf_token %}
+            <div class="campo">
+                <label for="nombre-completo">Nombre y Apellido: <strong>*</strong></label><br>
+                <input type="text" name="nombre-completo" placeholder="Brenda Argañaraz" value="{{ alumno.nombre_completo }}" required><br>
+            </div>
+            <div class="campo">
+                <label for="edad">Edad: <strong>*</strong></label><br>
+                <input type="number" name="edad" placeholder="24" value="{{ alumno.edad }}" required ><br>
+            </div>
+            <div class="campo">
+                <label for="materia">Materias <strong>*</strong></label><br>
+                <select name="materia" required>
+                    <optgroup label = "Licenciatura en informática">
+                        <option value="Programación Lógica" {% if alumno.materia == "Programación Lógica" %} selected {% endif %}>Programacion Lógica</option>
+                        <option value="Álgebra" {% if alumno.materia == "Álgebra" %} selected {% endif %}>Algebra</option>
+                        <option value="Programación Orientada a Objetos" {% if alumno.materia == "Programación Orientada a Objetos" %} selected {% endif %}>Programación Orientada a Objetos</option>
+                    </optgroup>
+                    <optgroup label = "Licenciatura en Economía">
+                        <option value="Administración I" {% if alumno.materia == "Administración I" %} selected {% endif %}>Administración I</option>
+                        <option value="Contabilidad" {% if alumno.materia == "Contabilidad" %} selected {% endif %}>Contabilidad</option>
+                        <option value="Principios de Economía" {% if alumno.materia == "Principios de Economía" %} selected {% endif %}>Principios de Economía</option>
+                    </optgroup>
+                    <optgroup label = "Abogacía">
+                        <option value="Introducción al Derecho" {% if alumno.materia == "Introducción al Derecho" %} selected {% endif %}>Introducción al Derecho</option>
+                        <option value="Teoría de la Persona" {% if alumno.materia == "Teoría de la Persona" %} selected {% endif %}>Teoría de la Persona</option>
+                        <option value="Derecho Penal I" {% if alumno.materia == "Derecho Penal I" %} selected {% endif %}>Derecho Penal I</option>
+                    </optgroup>
+                </select>
+            </div>
+            <input type="submit" class="btn" name="actualizar" value="Actualizar">
+            <button type="reset" claas="btn">Cancelar</button>
+        </form>
+    </main>
+
+{% endblock %}
