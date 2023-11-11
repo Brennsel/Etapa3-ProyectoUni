@@ -1,0 +1,102 @@
+body{
+    background-image: url("imagenes/background.jpg");
+}
+
+#contenedor{
+    width: 600px;
+    margin: 0 auto;
+    background-image: url("imagenes/background2.jpg");
+}
+
+#formulario{
+    width: 600px;
+    margin: auto;
+    border-bottom: 1px solid;
+    border-color: #cfcfcff8;
+}
+
+.campo{
+    padding-bottom: 15px;
+}
+
+h1{
+    text-align: center;
+    font-family: Arial;
+    color: #B32527;
+    font-size: 24px;
+}
+
+h4{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    font-weight: lighter;
+    padding: 10px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    background-color: #007AFF;
+}
+
+strong{
+    color: #B32527;
+}
+
+form{
+    margin-right: auto;
+    margin-left: auto;
+    width: 550px;
+}
+
+label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    color: #D27027;
+    padding-top: 10px;
+}
+
+input{
+    width: 545px;
+    height: 30px;
+    border-radius: 3px 3px;
+    border: none;
+}
+
+select{
+    border-radius: 3px;
+    width: 550px;
+    height: 30px;
+    border: none;
+}
+
+.btn{
+    width: 80px;
+    height: 30px;
+    border-radius: 3px 3px;
+    border: none;
+    margin-top: 15px;
+    color: white;
+    background-color: #007AFF;
+}
+
+table{
+    width: 600px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif ;
+    font-weight: lighter;
+    color: #D27027;
+    border: 1px solid;
+    border-color: rgb(82, 82, 82);
+    padding-top: 10px;
+}
+
+th{
+    padding: 10px; ;
+}
+
+
+td{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+}
