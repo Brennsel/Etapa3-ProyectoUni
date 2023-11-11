@@ -1,59 +1,11 @@
 {% extends "appuni/layout.html" %}
 {% load static %}
 
-    {% block content %}
+{% block content %}
 
-<!--<!DOCTYPE html>
- <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de la Universidad</title>
-    <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href='{% static "appuni/estilos.css" %}'>
 
-    <div id="contenedor">
-        <img src="imagenes/eu_banner.png" alt="Banner Superior">
-        <h1>Gestión de la Universidad</h1>
-       <main id="formulario">
-            <h4>Ingresar Alumno</h4>
-            <form action="cgi-bin/handledb.py" method="post">
-                <div class="campo">
-                    <label for="nombre-completo">Nombre y Apellido: <strong>*</strong></label><br>
-                    <input type="text" name="nombre-completo" placeholder="Brenda Argañaraz" required><br>
-                </div>
-                <div class="campo">
-                    <label for="edad">Edad: <strong>*</strong></label><br>
-                    <input type="number" name="edad" placeholder="24" required ><br>
-                </div>
-                <div class="campo">
-                    <label for="materia">Materias <strong>*</strong></label><br>
-                    <select name="materia" required>
-
-                        <optgroup label = "Licenciatura en informática">
-                            <option value="Programación Lógica">Programacion Lógica</option>
-                            <option value="Álgebra">Algebra</option>
-                            <option value="Programación Orientada a Objetos">Programación Orientada a Objetos</option>
-                        </optgroup>
-
-                        <optgroup label = "Licenciatura en Economía">
-                            <option value="Administración I">Administración I</option>
-                            <option value="Contabilidad">Contabilidad</option>
-                            <option value="Principios de Economía">Principios de Economía</option>
-                        </optgroup>
-
-                        <optgroup label = "Abogacía">
-                            <option value="Introducción al Derecho">Introducción al Derecho</option>
-                            <option value="Teoría de la Persona">Teoría de la Persona</option>
-                            <option value="Derecho Penal I">Derecho Penal I</option>
-                        </optgroup>
-                    </select>
-                </div>   
-                    <input type="submit" class="btn" name="insertar" value="Guardar">
-                    <button type="reset" claas="btn">Cancelar</button>
-            </form>
-        </main> -->
+        <img src="{% static 'appuni/eu_banner.png' %}">
 
         <div id="registros">
             <h1>Control de Registro</h1>
@@ -80,22 +32,5 @@
                     </tbody>
                 </table>
                 
-            <a href="{% url 'nuevo_alumno' %}" class="estilo-boton">Nuevo Alumno</a>
-                
-     {% endblock %}
-
-<!--         </div>
-        <script>
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "cgi-bin/handledb.py", true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    document.getElementById("registros").innerHTML
-            = xhr.responseText;
-                }
-            };
-            xhr.send();
-        </script>
-    </div>
-</body>
-</html>  -->
+            <a href="{% url 'nuevo_alumno' %}" class="estilo-boton">Nuevo Alumno</a>      
+{% endblock %}

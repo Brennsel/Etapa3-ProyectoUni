@@ -1,11 +1,11 @@
 body{
-    background-image: url("imagenes/background.jpg");
+    background-image: url(background.jpg);
 }
 
 #contenedor{
     width: 600px;
     margin: 0 auto;
-    background-image: url("imagenes/background2.jpg");
+    background-image: url(imagenes/background2.jpg);
 }
 
 #formulario{
@@ -100,3 +100,4 @@ td{
     color: black;
     text-align: center;
 }
+

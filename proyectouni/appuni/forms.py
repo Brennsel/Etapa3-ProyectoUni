@@ -1,6 +1,6 @@
 from django import forms
-from .models import Alumno, MATERIAS
-
+from .models import Alumno
+from .models import MATERIAS
 
 class FormularioAlumno(forms.ModelForm):
     class Meta:
