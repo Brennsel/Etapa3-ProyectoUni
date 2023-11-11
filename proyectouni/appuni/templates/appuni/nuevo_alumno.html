@@ -1,0 +1,44 @@
+{% extends "appuni/layout.html" %}
+{% load static %}
+
+{% block content %}
+    <main id="formulario">
+        <h4>Ingresar Alumno</h4>
+        <form action="{% url 'nuevo_alumno' %}" method="post">
+            {% csrf_token %}
+            <div class="campo">
+                <label for="nombre-completo">Nombre y Apellido: <strong>*</strong></label><br>
+                <input type="text" name="nombre-completo" placeholder="Brenda Argañaraz" required><br>
+            </div>
+            <div class="campo">
+                <label for="edad">Edad: <strong>*</strong></label><br>
+                <input type="number" name="edad" placeholder="24" required ><br>
+            </div>
+            <div class="campo">
+                <label for="materia">Materias <strong>*</strong></label><br>
+                <select name="materia" required>
+
+                    <optgroup label = "Licenciatura en informática">
+                        <option value="Programación Lógica">Programacion Lógica</option>
+                        <option value="Álgebra">Algebra</option>
+                        <option value="Programación Orientada a Objetos">Programación Orientada a Objetos</option>
+                    </optgroup>
+
+                    <optgroup label = "Licenciatura en Economía">
+                        <option value="Administración I">Administración I</option>
+                        <option value="Contabilidad">Contabilidad</option>
+                        <option value="Principios de Economía">Principios de Economía</option>
+                    </optgroup>
+
+                    <optgroup label = "Abogacía">
+                        <option value="Introducción al Derecho">Introducción al Derecho</option>
+                        <option value="Teoría de la Persona">Teoría de la Persona</option>
+                        <option value="Derecho Penal I">Derecho Penal I</option>
+                    </optgroup>
+                </select>
+            </div>   
+                <input type="submit" class="btn" name="insertar" value="Guardar">
+        </form>
+        <a href="{% url 'index' %}" class="btn">Volver</a>
+    </main>
+{% endblock %}
