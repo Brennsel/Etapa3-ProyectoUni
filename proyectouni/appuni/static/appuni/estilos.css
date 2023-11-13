@@ -68,7 +68,7 @@ select{
     border: none;
 }
 
-.btn{
+.estilo-boton{
     width: 80px;
     height: 30px;
     border-radius: 3px 3px;
@@ -100,4 +100,3 @@ td{
     color: black;
     text-align: center;
 }
-
