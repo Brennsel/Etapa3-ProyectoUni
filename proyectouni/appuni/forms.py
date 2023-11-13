@@ -1,21 +1,17 @@
 from django import forms
 from .models import Alumno
-from .models import MATERIAS
+#from .models import MATERIAS
 
 class FormularioAlumno(forms.ModelForm):
     class Meta:
         model = Alumno
-        fields = '__all__'
-        labels = {
-            'id': 'ID',
+        fields = ('id', 'nombre', 'edad', 'materia')
+        labels = {            
             'nombre': 'Nombre',
             'edad': 'Edad',
-            'materia': 'Materia',
+            'materia': 'Materias',
         }
 
-
-    materia = forms.ChoiceField(
-        choices=MATERIAS, 
-        required=True,
-        widget=forms.Select(attrs={'class': 'form-control'}),
-    )
+        nombre = forms.CharField(max_length=128)
+        edad = forms.IntegerField() 
+        materia = forms.ChoiceField()

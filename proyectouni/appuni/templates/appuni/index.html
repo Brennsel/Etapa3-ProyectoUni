@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <link rel="stylesheet" type="text/css" href='{% static "appuni/estilos.css" %}'>
+  
 
         <img src="{% static 'appuni/eu_banner.png' %}">
 
@@ -23,7 +23,7 @@
                     <tbody>
                     {% for alumno in alumnos %}
                         <tr>
-                        <td><a href="{% url 'alumno' alumno.id %}">{{ alumno.id }}</a></td>
+                        <td><a href="{% url 'alumno' alumno.nombre %}">{{ alumno.id }}</a></td>
                         <td>{{ alumno.nombre }}</td>
                         <td>{{ alumno.edad }}</td>
                         <td>{{ alumno.materia }}</td>
@@ -31,6 +31,6 @@
                     {% endfor %}
                     </tbody>
                 </table>
-                
-            <a href="{% url 'nuevo_alumno' %}" class="estilo-boton">Nuevo Alumno</a>      
+              </div>  
+            <a href="{% url 'nuevo_alumno' %}"><button class="estilo-boton">Nuevo Alumno</button></a>      
 {% endblock %}
